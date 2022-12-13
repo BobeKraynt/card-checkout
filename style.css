@@ -1,0 +1,323 @@
+html {
+    height: 100%;
+    font-family: 'Space Grotesk';
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0;
+    height: 100%;
+}
+
+#cardSide {
+    height: 100%;
+    background: url(./images/bg-main-desktop.png) no-repeat fixed;
+    background-size: cover;
+    width: 50%;
+    overflow:visible;
+}
+
+#front {
+    position: relative;
+    top: 10%;
+    left: 30%;
+    width: 100%;
+    background: url(./images/bg-card-front.png) no-repeat;
+    background-size: 100%; 
+    
+}
+
+#back {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    width: 100%;
+    background: url(./images/bg-card-back.png) no-repeat;
+    background-size: 100%;
+    
+}
+
+.cardImg {
+    border-radius: 0.6vw;
+    -webkit-box-shadow: 74px 83px 86px 38px rgba(0,0,0,0.19);
+    -moz-box-shadow: 74px 83px 86px 38px rgba(0,0,0,0.19);
+    box-shadow: 74px 83px 86px 38px rgba(0,0,0,0.19);
+    margin-bottom: 2vw;
+}
+
+#inner {
+    position: relative;
+    top: -100vw
+
+}
+
+#cardLogo {
+    position: absolute;
+    bottom: 78%;
+    left: 10%;
+    width: 20%;
+}
+
+#cardNumber {
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+    width: 120%;
+    font-size: 1.5vw;
+    color: white;
+    letter-spacing: 0.3vw;
+
+}
+
+#cardholderName {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    width: 130%;
+    font-size: 1vw;
+    color: white;
+}
+
+#mmyy {
+    position: absolute;
+    bottom: 15%;
+    left: 105%;
+    width: 130%; 
+    font-size: 1vw;
+    color: white;
+}
+
+#cvcNumber {
+    position: absolute;
+    bottom: 48%;
+    left: 105%;
+    width: 130%; 
+    font-size: 1vw;
+    color: white;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    margin-top: 25%;
+    grid-gap: 2%;
+    font-size: 18px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 35vw;
+}
+
+input {
+    margin-bottom: 20px;
+    border: 1px solid hsl(270, 3%, 87%);
+    height: 35px;
+    border-radius: 0.6vw;
+    width: 97%;
+    font-family: 'Space Grotesk'; 
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+#date {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#date-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 1vw;
+}
+
+#date-container label {
+    grid-column: -1/1;
+}
+
+#cvc-container {
+    display: grid;
+}
+
+#cvc-container label {
+    margin-bottom: 7%;
+}
+
+#date input {
+    width: 7vw;
+}
+
+#cvc-container input {
+    width: 14vw;
+    margin-right: 0;
+}
+#cvc-container input::-webkit-outer-spin-button,
+#cvc-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#error-container {
+    grid-column: -1/1;
+    display: grid;
+    grid-template-columns: 45fr 60fr;
+    margin-top: 2%;
+}
+
+#cvcError {
+    margin-left: 23%;
+}
+
+#confirm-btn {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 50px;
+    border-radius: 0.6vw;
+    background-color: hsl(278, 68%, 11%);
+    color: white;
+    font-family: 'Space Grotesk';
+    font-size: 18px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+    border: double 2px transparent;
+    border-radius: .6vw;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.submitted:invalid{
+    border: 2px solid hsl(0, 100%, 66%);
+}
+
+input::-webkit-validation-bubble-message {
+    display: none;
+}
+
+.error {
+    margin-top: -25px;
+    font-size: 14px;
+    color: hsl(0, 100%, 66%);
+    margin-bottom: 0%;
+    display: none;
+}
+
+#dateError {
+    display: block;
+    visibility: hidden;
+}
+
+
+@media only screen and (max-width: 850px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+    main {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto;
+    }
+    #cardSide {
+        margin: 0;
+        width: 100%;
+        height: 35vh;
+    }
+    #front {
+        position: absolute;
+        top: 20%;
+        width: 50vw;
+        left: 15%;
+        z-index: 1;
+
+    }
+    #back {
+        position: absolute;
+        top:5%;
+        left: 30%;
+        width: 50vw;
+    }
+    .cardImg {
+        border-radius: 1.6vw;
+    }
+    #back p {
+        width: 2vw;
+    }
+    #cardNumber, #cardholderName, #mmyy, #cvcNumber{
+        font-size: 3vw;
+        margin: 1% 0% 0% -1%;
+    }
+    #mmyy {
+        width: 20vw;
+    }
+
+    form {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 3vw;
+        width: 80vw;
+    }
+    
+    input, label{
+        width: 80vw;
+        margin-left:auto;
+        margin-right: auto;
+    }
+    #date {
+        width: 80vw;
+        grid-template-columns: 1fr 1fr;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #date-container {
+        width: 40vw;
+        grid-template-columns: 1fr 5fr;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #date-container input{
+        margin: -1vw;
+        margin-top: -2vw;
+        width: 11vw;
+    }
+    #cvc-container {
+        width: 20vw;
+        margin-left: -3vw;
+        grid-template-columns: auto;
+    }
+    #cvc-container label {
+        width: 39vw;
+    }
+    #cvc-container input {
+        margin: 0;
+        margin-top: -2vw;
+        width: 39.5vw;
+    }
+    #confirm-btn {
+        width: 40vw;
+        margin-left: auto;
+        margin-right: auto
+    }
+    #dateError, #cvcError {
+        margin: auto;
+        width: 40vw;
+    }
+    #error-container {
+        margin-left: -1%;
+    }
+}
